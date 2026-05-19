@@ -45,7 +45,7 @@ export function GallerySection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="relative overflow-hidden rounded-2xl group break-inside-avoid"
+              className="relative overflow-hidden group break-inside-avoid"
             >
               {/* This padding-bottom approach gives varying heights or standard aspect ratios */}
               <div className="relative w-full h-[300px] sm:h-[400px]">
@@ -55,7 +55,7 @@ export function GallerySection() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute inset-0 group-hover:bg-white/10 dark:group-hover:bg-black/10 transition-colors duration-500 pointer-events-none" />
               </div>
             </motion.div>
           ))}

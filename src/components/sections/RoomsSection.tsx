@@ -8,16 +8,14 @@ const rooms = [
   {
     type: "Single Occupancy",
     tag: "Premium",
-    price: "₹24,000",
     description: "Your personal sanctuary. A spacious private room designed for deep focus, safety, and ultimate relaxation.",
-    features: ["King-size bed", "Private balcony", "Attached washroom", "Dedicated workspace"],
+    features: ["King-size bed", "Attached washroom", "Dedicated workspace"],
     icon: <BedDouble className="w-5 h-5" />,
     image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
   },
   {
     type: "Double Occupancy",
     tag: "Popular",
-    price: "₹15,000",
     description: "The perfect balance of community and privacy. Share a beautifully designed space with a like-minded roommate.",
     features: ["Twin beds", "Shared balcony", "Attached washroom", "Dual wardrobes"],
     icon: <Users className="w-5 h-5" />,
@@ -80,9 +78,9 @@ export function RoomsSection() {
                   src={room.image} 
                   alt={room.type}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 
                 <div className="absolute top-6 right-6 px-4 py-1.5 bg-black text-white text-xs font-semibold uppercase tracking-widest z-10">
                   {room.tag}
@@ -101,8 +99,7 @@ export function RoomsSection() {
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex justify-between items-center mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold dark:text-white text-gray-900">{room.price}</span>
-                    <span className="text-sm dark:text-gray-500 text-gray-500">/ month</span>
+                    <span className="text-sm font-medium dark:text-gray-400 text-gray-500 uppercase tracking-widest">Monthly Plans Available</span>
                   </div>
                   <a href="tel:+919891344213" className="px-6 py-2 text-xs font-medium text-[#E50914] hover:text-white bg-[#E50914]/10 hover:bg-[#E50914] rounded-none transition-colors uppercase tracking-widest border border-transparent hover:border-[#E50914]">
                     Enquire Now

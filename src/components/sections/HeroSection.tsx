@@ -97,7 +97,6 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative h-[500px] md:h-[650px] lg:h-[750px] w-full mt-12 lg:mt-0 flex justify-end"
         >
-          {/* Main Portrait Image */}
           <div className="relative w-full md:w-[80%] h-full overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl">
             <Image
               src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=2000"
@@ -106,7 +105,6 @@ export function HeroSection() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-black/10" />
           </div>
 
           {/* Overlapping Secondary Image */}
