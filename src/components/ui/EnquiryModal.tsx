@@ -51,19 +51,24 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
     e.preventDefault();
     setStatus("loading");
 
-    const body = new FormData();
-    body.append(FIELD_IDS.name,     form.name);
-    body.append(FIELD_IDS.phone,    form.phone);
-    body.append(FIELD_IDS.email,    form.email);
-    body.append(FIELD_IDS.roomType, form.roomType);
-    body.append(FIELD_IDS.message,  form.message);
+    const params = new URLSearchParams();
+    params.append(FIELD_IDS.name,     form.name);
+    params.append(FIELD_IDS.phone,    form.phone);
+    params.append(FIELD_IDS.email,    form.email);
+    params.append(FIELD_IDS.roomType, form.roomType);
+    params.append(FIELD_IDS.message,  form.message);
 
     try {
-      // Google Forms blocks CORS, so we use no-cors — the submission still lands
-      await fetch(GOOGLE_FORM_ACTION, { method: "POST", body, mode: "no-cors" });
+      // Google Forms blocks CORS reads, but the submission lands with no-cors + url-encoded body
+      await fetch(GOOGLE_FORM_ACTION, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+      });
       setStatus("success");
     } catch {
-      // Even a network error here usually means the form submitted fine
+      // Network errors are swallowed — entry still records on Google's side
       setStatus("success");
     }
   };
