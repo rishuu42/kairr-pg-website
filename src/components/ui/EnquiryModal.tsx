@@ -8,14 +8,14 @@ import { X, CheckCircle, Loader2 } from "lucide-react";
 // STEP 1 ▶  Replace these with YOUR Google Form values (see README for guide)
 // ─────────────────────────────────────────────────────────────────────────────
 const GOOGLE_FORM_ACTION =
-  "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLScEYCb28QXMLf5JxEyfSDihDvluuRl7gTSZ5jYgQ6WS6yZn_w/formResponse";
 
 const FIELD_IDS = {
-  name:      "entry.000000001",  // replace with your real entry ID
-  phone:     "entry.000000002",
-  email:     "entry.000000003",
-  roomType:  "entry.000000004",
-  message:   "entry.000000005",
+  name:     "entry.1874481074",
+  phone:    "entry.1322698460",
+  email:    "entry.1574018524",
+  roomType: "entry.1412475966",
+  message:  "entry.727501644",
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
