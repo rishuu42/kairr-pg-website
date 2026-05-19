@@ -69,9 +69,9 @@ export function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass-card p-8 rounded-2xl group hover:border-[#E50914]/30 transition-all duration-300"
+              className="p-8 border border-black/10 dark:border-white/10 bg-white dark:bg-[#050505] group hover:border-[#E50914]/40 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-xl dark:bg-[#E50914]/10 bg-[#E50914]/5 border border-[#E50914]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 bg-[#E50914]/5 dark:bg-[#E50914]/10 border border-[#E50914]/20 flex items-center justify-center mb-6 group-hover:bg-[#E50914]/20 transition-colors duration-300">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3 dark:text-white text-gray-900">{feature.title}</h3>
