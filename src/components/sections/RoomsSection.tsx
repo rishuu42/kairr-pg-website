@@ -23,7 +23,7 @@ const rooms = [
   }
 ];
 
-export function RoomsSection() {
+export function RoomsSection({ onEnquire }: { onEnquire: () => void }) {
   return (
     <section id="rooms" className="py-24 relative overflow-hidden">
       {/* Background glow */}
@@ -101,9 +101,9 @@ export function RoomsSection() {
                   <div className="flex items-baseline gap-1">
                     <span className="text-sm font-medium dark:text-gray-400 text-gray-500 uppercase tracking-widest">Monthly Plans Available</span>
                   </div>
-                  <a href="tel:+919891344213" className="px-6 py-2 text-xs font-medium text-[#E50914] hover:text-white bg-[#E50914]/10 hover:bg-[#E50914] rounded-none transition-colors uppercase tracking-widest border border-transparent hover:border-[#E50914]">
+                  <button onClick={onEnquire} className="px-6 py-2 text-xs font-medium text-[#E50914] hover:text-white bg-[#E50914]/10 hover:bg-[#E50914] rounded-none transition-colors uppercase tracking-widest border border-transparent hover:border-[#E50914]">
                     Enquire Now
-                  </a>
+                  </button>
                 </div>
                 
                 <p className="dark:text-gray-400 text-gray-600 text-sm leading-relaxed mb-6 flex-1">

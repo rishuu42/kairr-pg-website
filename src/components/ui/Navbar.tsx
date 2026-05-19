@@ -6,7 +6,7 @@ import { Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
-export function Navbar() {
+export function Navbar({ onEnquire = () => {} }: { onEnquire?: () => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -69,12 +69,18 @@ export function Navbar() {
           >
             {mounted && theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
-          <a href="tel:+919891344213" className="text-sm font-medium hover:text-[#E50914] transition-colors dark:text-white text-gray-900 tracking-wide uppercase">
-            Call Us
+          <a
+            href="https://share.google/yiyL6QfETlVOShiik"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium hover:text-[#E50914] transition-colors dark:text-white text-gray-900 tracking-wide uppercase flex items-center gap-1.5"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Visit Us
           </a>
-          <a href="/#contact" className="px-6 py-3 text-sm font-medium bg-[#E50914] hover:bg-[#b80710] text-white rounded-none transition-all tracking-wide uppercase">
+          <button onClick={onEnquire} className="px-6 py-3 text-sm font-medium bg-[#E50914] hover:bg-[#b80710] text-white rounded-none transition-all tracking-wide uppercase">
             Enquire Now
-          </a>
+          </button>
         </div>
 
         <div className="flex items-center gap-4 md:hidden relative z-50">
@@ -128,12 +134,18 @@ export function Navbar() {
             transition={{ duration: 0.3, delay: 0.4 }}
             className="mt-auto mb-12 flex flex-col gap-4"
           >
-            <a href="tel:+919891344213" className="px-6 py-4 text-center text-lg font-medium bg-[#E50914] text-white rounded-none w-full tracking-wide uppercase">
-              Call Us Now
+            <button onClick={() => { setMobileMenuOpen(false); onEnquire(); }} className="px-6 py-4 text-center text-lg font-medium bg-[#E50914] text-white rounded-none w-full tracking-wide uppercase">
+              Enquire Now
+            </button>
+            <a
+              href="https://share.google/yiyL6QfETlVOShiik"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center text-sm dark:text-gray-400 text-gray-500 hover:text-[#E50914] transition-colors flex items-center justify-center gap-1.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Milap Nagar, Uttam Nagar
             </a>
-            <div className="flex items-center justify-center gap-4 mt-6">
-              <span className="text-sm dark:text-gray-400 text-gray-500">Milap Nagar, Uttam Nagar</span>
-            </div>
           </motion.div>
         </motion.div>
       )}

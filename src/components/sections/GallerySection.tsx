@@ -7,8 +7,8 @@ const images = [
   "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000", // bedroom
   "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=1000", // modern living
   "/image3.jpeg", // kitchen/room
-  "/Terrace.jpeg", // lounge
-  "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000", // dining
+  "/Terrace.jpeg",  // terrace
+  "/washroom.jpeg", // washroom
   "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=1000" // bedroom 2
 ];
 

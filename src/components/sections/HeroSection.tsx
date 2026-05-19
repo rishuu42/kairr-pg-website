@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Star, MapPin, Search } from "lucide-react";
 import Image from "next/image";
 
-export function HeroSection() {
+export function HeroSection({ onEnquire }: { onEnquire: () => void }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
       {/* Background elements */}
@@ -52,9 +52,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6"
           >
-            <a href="tel:+919891344213" className="px-10 py-4 bg-[#E50914] hover:bg-[#b80710] text-white font-medium transition-all text-center tracking-wide uppercase text-sm">
+            <button onClick={onEnquire} className="px-10 py-4 bg-[#E50914] hover:bg-[#b80710] text-white font-medium transition-all text-center tracking-wide uppercase text-sm">
               Book a Tour
-            </a>
+            </button>
             <a href="#gallery" className="px-10 py-4 bg-transparent border-b border-black dark:border-white text-black dark:text-white font-medium transition-all text-center tracking-wide uppercase text-sm hover:text-[#E50914] hover:border-[#E50914]">
               View Gallery
             </a>
